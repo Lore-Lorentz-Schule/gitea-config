@@ -1,0 +1,47 @@
+version: "3"
+
+networks:
+  gitea:
+    external: false
+
+#volumes:
+#  gitea:
+#    driver: local
+
+services:
+  server:
+    image: gitea/gitea:latest
+    container_name: gitea
+    environment:
+      - USER_UID=1000 # TODO
+      - USER_GID=1000 # TODO
+      - GITEA__database__DB_TYPE=mysql
+      - GITEA__database__HOST=db:3306
+      - GITEA__database__NAME=gitea # TODO
+      - GITEA__database__USER=gitea # TODO
+      - GITEA__database__PASSWD=gitea # TODO
+    restart: always
+    networks:
+      - gitea
+    volumes:
+      - ./gitea:/data # TODO
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "3000:3000" # Port for the dashboard
+      - "222:22" # Port of the SSH-Server
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=gitea # TODO
+      - MYSQL_USER=gitea # TODO
+      - MYSQL_PASSWORD=gitea # TODO
+      - MYSQL_DATABASE=gitea # TODO
+    networks:
+      - gitea
+    volumes:
+      - ./mysql:/var/lib/mysql
