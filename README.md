@@ -22,9 +22,6 @@ You can start all the services by running
 
 2. `docker-compose up -d`
 
-#### Configuration
-
-
 ### Creating assets
 
 To change the logos the images in gitea/gitea/public/img/ have to be changed
