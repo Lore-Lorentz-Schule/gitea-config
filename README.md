@@ -10,6 +10,13 @@ The configuration files of a self-hosted git ([gitea](https://gitea.io/en-us/)) 
 * [OS X](https://docs.docker.com/mac/started/)
 * [Linux](https://docs.docker.com/linux/started/)
 
+### ENV
+
+To configure all the confidential settings, rename `example.env` to just `.env` and change the values inside.
+The description to all of them can be found here: [gitea-docs](https://docs.gitea.io/en-us/config-cheat-sheet/)
+
+Further config can be done in `gitea/gitea/conf/app.ini`
+
 ### Running
 
 You can start all the services by running
