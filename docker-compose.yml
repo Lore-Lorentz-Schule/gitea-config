@@ -17,15 +17,9 @@ services:
       - USER_GID=1000 # TODO
       - GITEA__database__DB_TYPE=mysql
       - GITEA__database__HOST=db:3306
-      - GITEA__database__NAME=${GITEA__database__NAME}
-      - GITEA__database__USER=${GITEA__database__USER}
-      - GITEA__database__PASSWD=${GITEA__database__PASSWD}
-      - name=${GITEA__database__NAME}
-      - USER=${GITEA__database__USER}
-      - PASSWD=${GITEA__database__PASSWD}
-      - LFS_JWT_SECRET=${LFS_JWT_SECRET}
-      - SECRET_KEY=${SECRET_KEY}
-      - INTERNAL_TOKEN=${INTERNAL_TOKEN}
+      - GITEA__database__NAME=gitea # TODO
+      - GITEA__database__USER=gitea # TODO
+      - GITEA__database__PASSWD=gitea # TODO
     restart: always
     networks:
       - gitea
