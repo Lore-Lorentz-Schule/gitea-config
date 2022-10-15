@@ -1,0 +1,20 @@
+<footer>
+	<div class="ui container">
+		<div class="ui left">
+			<a target="_blank" rel="noopener noreferrer" href="https://gitea.io">Powered by Gitea</a>
+		</div>
+		<div class="ui right links">
+			<div class="ui language bottom floating slide up dropdown link item">
+				{{svg "octicon-globe"}}
+				<div class="text">{{.locale.LangName}}</div>
+				<div class="menu language-menu">
+					{{range .AllLangs}}
+						<a lang="{{.Lang}}" data-url="{{AppSubUrl}}/?lang={{.Lang}}" class="item {{if eq $.locale.Lang .Lang}}active selected{{end}}">{{.Name}}</a>
+					{{end}}
+				</div>
+			</div>
+            {{template "custom/extra_links_footer" .}}
+			<a href="{{AssetUrlPrefix}}/js/licenses.txt">Licenses</a>
+		</div>
+	</div>
+</footer>
