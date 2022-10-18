@@ -6,5 +6,6 @@ gitea/gitea/*
 !gitea/gitea/conf/
 !gitea/gitea/public/
 !gitea/gitea/templates/
+!gitea/gitea/options/
 
 .env
